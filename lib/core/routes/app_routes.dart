@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../../presentation/screens/home/binding/weather_binding.dart';
 import '../../presentation/screens/home/screens/home_screen.dart';
 
 class AppRoutes {
@@ -9,6 +10,7 @@ class AppRoutes {
     GetPage(
       name: homeScreen,
       page: () => const HomeScreen(),
+      binding: WeatherBinding(),
     ),
   ];
 }

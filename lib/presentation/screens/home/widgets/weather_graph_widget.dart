@@ -3,36 +3,52 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/theme/theme.dart';
+import '../controller/weather_controller.dart';
 
 class WeatherGraphWidget extends StatelessWidget {
   const WeatherGraphWidget({
     super.key,
   });
-  static List<double> data = [26, 23, 23, 23, 28, 27, 24, 21];
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
       children: [
-        Sparkline(
-          data: data,
-          lineWidth: 3,
-          lineGradient: LinearGradient(
-            colors: List.generate(
-              data.length - 1,
-              (i) => data[i] >= data[i + 1] ? iconClr : primaryClr,
-            ),
-          ),
-          useCubicSmoothing: true,
-          cubicSmoothingFactor: .2,
+        GetBuilder<WeatherController>(
+          builder: (weatherCtrl) {
+            return Sparkline(
+              data: weatherCtrl.weatherModel!.hourlyForecastModel.hourlyForecast
+                  as List<double>,
+              lineWidth: 3,
+              lineGradient: LinearGradient(
+                colors: List.generate(
+                  weatherCtrl.weatherModel!.hourlyForecastModel.hourlyForecast
+                          .length -
+                      1,
+                  (i) => weatherCtrl.weatherModel!.hourlyForecastModel
+                              .hourlyForecast[i] >=
+                          weatherCtrl.weatherModel!.hourlyForecastModel
+                              .hourlyForecast[i + 1]
+                      ? iconClr
+                      : primaryClr,
+                ),
+              ),
+              useCubicSmoothing: true,
+              pointIndex: weatherCtrl.pointIndex,
+              pointSize: 8,
+              pointsMode: PointsMode.atIndex,
+              pointColor: dialogClr,
+              cubicSmoothingFactor: .2,
+            );
+          },
         ),
         TweenAnimationBuilder(
           tween: Tween<double>(
             begin: Get.width,
             end: 0,
           ),
-          duration: const Duration(milliseconds: 1500),
+          duration: const Duration(milliseconds: 2500),
           builder: (context, w, s) {
             return Align(
               alignment: Alignment.centerRight,

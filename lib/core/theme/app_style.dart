@@ -21,8 +21,10 @@ class AppStyle {
     fontSize: 16,
   );
 
-  static const TextStyle fS18 = TextStyle(
-    fontSize: 18,
+  static const TextStyle primaryClrHeight1fS30 = TextStyle(
+    fontSize: 30,
+    height: 1,
+    color: primaryClr,
   );
 
   static const TextStyle iconClrFS20 = TextStyle(

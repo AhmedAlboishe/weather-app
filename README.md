@@ -13,7 +13,7 @@
 
 | Home Screen  | 
 |--------------|
-| <p  align="center"><img src="https://github.com/user-attachments/assets/21a7386f-292b-485c-aa9f-3c4399136c52" width="30%" height="30%" align=”middle”></p> |
+| <p  align="center"><img src="https://github.com/user-attachments/assets/21a7386f-292b-485c-aa9f-3c4399136c52" width="50%" height="50%" align=”middle”></p> |
 
 ## Getting Started 🚀
 
@@ -51,9 +51,9 @@ Before you begin, ensure you have met the following requirements:
 
 ### Environment Setup
 
-To run the app, you'll need an API key from **[https://www.weatherapi.com]**. Follow these steps to add your API key:
+To run the app, you'll need an API key from **https://www.weatherapi.com**. Follow these steps to add your API key:
 
-1. Sign up on **[https://www.weatherapi.com]** and obtain your API key.
+1. Sign up on **https://www.weatherapi.com** and obtain your API key.
 2. Open the `lib/core/services/weather_services.dart` file in the project.
 3. Replace `YOUR_API_KEY` with your actual API key:
 

@@ -93,7 +93,7 @@ This weather application **relies entirely on location services** to provide acc
 
 If the user denies location permissions, they will be prompted to enable location access from their device settings. Without location access, the app cannot retrieve or display weather data.
 
-### Packages Used 🛠️
+## Packages Used 🛠️
 
 - **get**.
 - **geolocator**.
@@ -104,6 +104,6 @@ If the user denies location permissions, they will be prompted to enable locatio
 - **lottie**.
 - **flutter_svg**.
 
-### License 📄
+## License 📄
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for more details.

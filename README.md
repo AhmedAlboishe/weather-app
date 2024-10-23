@@ -103,7 +103,3 @@ If the user denies location permissions, they will be prompted to enable locatio
 - **gap**.
 - **lottie**.
 - **flutter_svg**.
-
-## License 📄
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for more details.

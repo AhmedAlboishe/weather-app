@@ -13,7 +13,7 @@
 
 | Home Screen  | 
 |--------------|
-| <p  align="center"><img src="https://github.com/user-attachments/assets/21a7386f-292b-485c-aa9f-3c4399136c52" width="40%" height="40%" align=”middle”></p> |
+| <p  align="center"><img src="https://github.com/user-attachments/assets/21a7386f-292b-485c-aa9f-3c4399136c52" width="30%" height="30%" align=”middle”></p> |
 
 ## Getting Started 🚀
 

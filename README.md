@@ -13,7 +13,7 @@
 
 | Home Screen |   Home Screen  |
 |-------------|----------------|
-| <p align="center"> <img src="https://github.com/user-attachments/assets/21a7386f-292b-485c-aa9f-3c4399136c52" width="34%" height="34%" align=”middle”></p> | <p align="center"><video src="https://github.com/user-attachments/assets/342bf5fd-50b0-4839-b4ce-1ab8755083c0"  ></p> |
+| <p align="center"> <img src="https://github.com/user-attachments/assets/21a7386f-292b-485c-aa9f-3c4399136c52" width="41%" height="41%" align=”middle”></p> | <p align="center"><video src="https://github.com/user-attachments/assets/342bf5fd-50b0-4839-b4ce-1ab8755083c0"  ></p> |
 
 
 

@@ -11,9 +11,12 @@
   
 ## Screenshots 📱
 
-| Home Screen              | 
-|--------------------------|
-| ![Home Screen](https://github.com/user-attachments/assets/21a7386f-292b-485c-aa9f-3c4399136c52) |
+| Home Screen |   Home Screen  |
+|-------------|----------------|
+| <p align="center"> <img src="https://github.com/user-attachments/assets/21a7386f-292b-485c-aa9f-3c4399136c52" width="41%" height="41%" align=”middle”></p> | <p align="center"><video src="https://github.com/user-attachments/assets/342bf5fd-50b0-4839-b4ce-1ab8755083c0"  ></p> |
+
+
+
 
 ## Getting Started 🚀
 
@@ -51,9 +54,9 @@ Before you begin, ensure you have met the following requirements:
 
 ### Environment Setup
 
-To run the app, you'll need an API key from **[https://www.weatherapi.com]**. Follow these steps to add your API key:
+To run the app, you'll need an API key from **https://www.weatherapi.com**. Follow these steps to add your API key:
 
-1. Sign up on **[https://www.weatherapi.com]** and obtain your API key.
+1. Sign up on **https://www.weatherapi.com** and obtain your API key.
 2. Open the `lib/core/services/weather_services.dart` file in the project.
 3. Replace `YOUR_API_KEY` with your actual API key:
 
@@ -93,7 +96,7 @@ This weather application **relies entirely on location services** to provide acc
 
 If the user denies location permissions, they will be prompted to enable location access from their device settings. Without location access, the app cannot retrieve or display weather data.
 
-### Packages Used 🛠️
+## Packages Used 🛠️
 
 - **get**.
 - **geolocator**.
@@ -103,7 +106,3 @@ If the user denies location permissions, they will be prompted to enable locatio
 - **gap**.
 - **lottie**.
 - **flutter_svg**.
-
-### License 📄
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for more details.

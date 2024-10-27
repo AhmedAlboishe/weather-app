@@ -3,19 +3,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/theme/app_style.dart';
-import '../../../../core/utils/constants/image_constants.dart';
+import '../../../../core/utils/constants/list_constants.dart';
 import '../controller/weather_controller.dart';
 
 class WeatherDetailsWidget extends StatelessWidget {
   const WeatherDetailsWidget({
     super.key,
   });
-
-  static const List svg = [
-    ImageConstants.humidity,
-    ImageConstants.windSpeed,
-    ImageConstants.umbrella,
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +23,7 @@ class WeatherDetailsWidget extends StatelessWidget {
             (index) => Row(
               children: [
                 SvgPicture.asset(
-                  svg[index],
+                  weatherDetailsIcons[index],
                   height: index == 0 ? 25 : 24,
                 ),
                 Padding(

@@ -8,14 +8,13 @@
 - **Hourly and Daily Forecasts**: Get detailed weather forecasts for the upcoming hours and days.
 - **Location-Based Weather**: Automatically fetches weather data based on the user's location using GPS.
 - **Clean and Simple UI**: User-friendly interface with clear weather information.
+- **Multi-Language Support**: Adapts to device language (Arabic/English).
   
 ## Screenshots 📱
 
-| Home Screen |
-|-------------|
-| <p align="center"> <img src="https://github.com/user-attachments/assets/21a7386f-292b-485c-aa9f-3c4399136c52" width="30%" height="30%" align=”middle”></p> |
- 
-
+| Home Screen (Arabic) | Home Screen (English) |
+|----------------------|-----------------------|
+|<p align="center">  <img src="https://github.com/user-attachments/assets/266a951e-88d5-4d8c-8273-816fa45a4f61" width="40%" height="40%" align=”middle”></p> | <p align="center"> <img src="https://github.com/user-attachments/assets/c2ae82b9-ecbc-4265-939c-332fc96a4a5d" width="40%" height="40%" align=”middle”> </p> |
 
 
 ## Getting Started 🚀

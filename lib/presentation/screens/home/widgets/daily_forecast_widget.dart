@@ -33,13 +33,15 @@ class DailyForecastWidget extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 5.0),
                       child: Text(
                         index == 0
-                            ? 'Today'
-                            : DateFormat('EEEE').format(
-                                DateTime.parse(
-                                  weatherCtrl.weatherModel!.dailyForecastModel
-                                      .daysDate[index],
-                                ),
-                              ),
+                            ? 'today'.tr
+                            : DateFormat('EEEE')
+                                .format(
+                                  DateTime.parse(
+                                    weatherCtrl.weatherModel!.dailyForecastModel
+                                        .daysDate[index],
+                                  ),
+                                )
+                                .tr,
                         style: AppStyle.fS16,
                       ),
                     ),
@@ -60,15 +62,17 @@ class DailyForecastWidget extends StatelessWidget {
                         TextSpan(
                           children: [
                             TextSpan(
-                                text:
-                                    '${weatherCtrl.weatherModel!.dailyForecastModel.maxTemp[index]}'),
+                              text:
+                                  '${weatherCtrl.weatherModel!.dailyForecastModel.maxTemp[index]}',
+                            ),
                             const TextSpan(
                               text: '°',
                               style: AppStyle.degreeStyle,
                             ),
                             TextSpan(
-                                text:
-                                    '  ${weatherCtrl.weatherModel!.dailyForecastModel.minTemp[index]}'),
+                              text:
+                                  '  ${weatherCtrl.weatherModel!.dailyForecastModel.minTemp[index]}',
+                            ),
                             const TextSpan(
                               text: '°',
                               style: AppStyle.degreeStyle,
@@ -76,7 +80,9 @@ class DailyForecastWidget extends StatelessWidget {
                           ],
                           style: AppStyle.fS16,
                         ),
-                        textAlign: TextAlign.right,
+                        textAlign: weatherCtrl.isArabic
+                            ? TextAlign.left
+                            : TextAlign.right,
                       ),
                     ),
                   ),

@@ -17,21 +17,26 @@ class WeatherGraphWidget extends StatelessWidget {
       children: [
         GetBuilder<WeatherController>(
           builder: (weatherCtrl) {
+            final hourlyForecast = weatherCtrl.isArabic
+                ? weatherCtrl
+                    .weatherModel!.hourlyForecastModel.hourlyForecast.reversed
+                    .toList() as List<double>
+                : weatherCtrl.weatherModel!.hourlyForecastModel.hourlyForecast
+                    as List<double>;
+
             return Sparkline(
-              data: weatherCtrl.weatherModel!.hourlyForecastModel.hourlyForecast
-                  as List<double>,
+              data: hourlyForecast,
               lineWidth: 3,
               lineGradient: LinearGradient(
                 colors: List.generate(
-                  weatherCtrl.weatherModel!.hourlyForecastModel.hourlyForecast
-                          .length -
-                      1,
-                  (i) => weatherCtrl.weatherModel!.hourlyForecastModel
-                              .hourlyForecast[i] >=
-                          weatherCtrl.weatherModel!.hourlyForecastModel
-                              .hourlyForecast[i + 1]
-                      ? iconClr
-                      : primaryClr,
+                  hourlyForecast.length - 1,
+                  (i) => weatherCtrl.isArabic
+                      ? hourlyForecast[i] <= hourlyForecast[i + 1]
+                          ? iconClr
+                          : primaryClr
+                      : hourlyForecast[i] >= hourlyForecast[i + 1]
+                          ? iconClr
+                          : primaryClr,
                 ),
               ),
               useCubicSmoothing: true,
@@ -51,7 +56,9 @@ class WeatherGraphWidget extends StatelessWidget {
           duration: const Duration(milliseconds: 2500),
           builder: (context, w, s) {
             return Align(
-              alignment: Alignment.centerRight,
+              alignment: Get.locale?.languageCode == 'ar'
+                  ? Alignment.centerLeft
+                  : Alignment.centerRight,
               child: Container(
                 width: w,
                 height: 120,

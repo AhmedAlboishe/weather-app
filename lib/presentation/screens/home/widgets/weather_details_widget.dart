@@ -27,9 +27,10 @@ class WeatherDetailsWidget extends StatelessWidget {
                   height: index == 0 ? 25 : 24,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 5.0, left: 10),
+                  padding: const EdgeInsets.only(top: 5.0, left: 10, right: 10),
                   child: Text(
-                    weatherCtrl.weatherDetails![index],
+                    weatherCtrl.weatherDetailsValues![index] +
+                        weatherDetailsUnits[index].tr,
                     style: AppStyle.fS16,
                   ),
                 ),

@@ -27,8 +27,8 @@ class CustomLoadingWidget extends StatelessWidget {
             ),
             Text(
               weatherCtrl.determiningYourLocation
-                  ? 'Determining your location...'
-                  : 'Fetching weather data...',
+                  ? 'determining_location'.tr
+                  : 'fetching_weather_data'.tr,
               textAlign: TextAlign.center,
             ),
             const Spacer(),

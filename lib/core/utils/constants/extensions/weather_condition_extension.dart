@@ -2,11 +2,13 @@ extension WeatherConditionExtension on String {
   String toShortWeatherCondition() {
     return switch (this) {
       'Clear' => 'Clear',
+      'Clear ' => 'Clear',
       'Sunny' => 'Sunny',
       'Partly cloudy' => 'Partly cloudy',
       'Partly Cloudy ' => 'Partly cloudy',
       'Partly Cloudy' => 'Partly cloudy',
       'Cloudy' => 'Cloudy',
+      'Cloudy ' => 'Cloudy',
       'Overcast' => 'Overcast',
       'Overcast ' => 'Overcast',
       'Mist' => 'Mist',

@@ -5,3 +5,9 @@ const List<String> weatherDetailsIcons = [
   ImageConstants.windSpeed,
   ImageConstants.umbrella,
 ];
+
+const List<String> weatherDetailsUnits = [
+  '%',
+  'km/h',
+  'mm',
+];

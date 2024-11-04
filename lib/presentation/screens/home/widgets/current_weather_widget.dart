@@ -22,21 +22,26 @@ class CurrentWeatherWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              '${weatherCtrl.weatherModel!.city}, ${weatherCtrl.weatherModel!.country}\nLastUpdate: ${int.parse(weatherCtrl.weatherModel!.lastUpdate.split(' ')[1].split(':')[0]).toAmPm(weatherCtrl.weatherModel!.lastUpdate.split(' ')[1].split(':')[1])}',
+              '${weatherCtrl.weatherModel!.city}, ${weatherCtrl.weatherModel!.country}\n${'last_update'.tr}: ${int.parse(weatherCtrl.weatherModel!.lastUpdate.split(' ')[1].split(':')[0]).toAmPm(weatherCtrl.weatherModel!.lastUpdate.split(' ')[1].split(':')[1])}',
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(text: '${weatherCtrl.weatherModel!.temp}'),
-                      const TextSpan(
-                        text: '°',
-                        style: AppStyle.degreeStyle,
-                      ),
-                    ],
-                    style: AppStyle.primaryClrFS100,
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: weatherCtrl.isArabic ? 15 : 0,
+                  ),
+                  child: Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(text: '${weatherCtrl.weatherModel!.temp}'),
+                        const TextSpan(
+                          text: '°',
+                          style: AppStyle.degreeStyle,
+                        ),
+                      ],
+                      style: AppStyle.primaryClrFS100,
+                    ),
                   ),
                 ),
                 Expanded(
@@ -55,7 +60,8 @@ class CurrentWeatherWidget extends StatelessWidget {
                         child: FittedBox(
                           child: Text(
                             weatherCtrl.weatherModel!.weatherCondition
-                                .toShortWeatherCondition(),
+                                .toShortWeatherCondition()
+                                .tr,
                             maxLines: 1,
                             style: AppStyle.primaryClrFS40,
                           ),

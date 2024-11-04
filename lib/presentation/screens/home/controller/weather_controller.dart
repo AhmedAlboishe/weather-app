@@ -13,10 +13,13 @@ class WeatherController extends GetxController {
   final LocationServices locationServices = LocationServices();
   final ScrollController scrollController = ScrollController();
   int pointIndex = 0;
-  List<String>? weatherDetails;
+  int hourIndex = 0;
+  List<String>? weatherDetailsValues;
   late bool showConnectionError;
   late bool showLocationError;
   late bool determiningYourLocation;
+
+  bool get isArabic => Get.locale?.languageCode == 'ar';
 
   @override
   Future<void> onInit() async {
@@ -48,12 +51,12 @@ class WeatherController extends GetxController {
         lang: location['lang']!,
       );
       if (weatherModel != null) {
-        initialPointIndex();
+        calculateHourAndPointIndex();
 
-        weatherDetails = [
-          '${weatherModel?.humidity}%',
-          '${weatherModel?.windSpeed} km/h',
-          '${weatherModel?.precipitation} mm'
+        weatherDetailsValues = [
+          '${weatherModel?.humidity}',
+          '${weatherModel?.windSpeed} ',
+          '${weatherModel?.precipitation} ',
         ];
       } else {
         showConnectionError = true;
@@ -64,14 +67,24 @@ class WeatherController extends GetxController {
     update();
   }
 
-  void initialPointIndex() {
+  void calculateHourAndPointIndex() {
     String currentHour = DateTime.now().hour.toString();
+
+    final hours = isArabic
+        ? weatherModel!.hourlyForecastModel.hours.reversed.toList()
+        : weatherModel!.hourlyForecastModel.hours;
+
     if (int.parse(currentHour) < 10) {
       currentHour = '0$currentHour';
     }
-    for (var i = 0; i < weatherModel!.hourlyForecastModel.hours.length; i++) {
-      if (currentHour == weatherModel!.hourlyForecastModel.hours[i]) {
+
+    for (var i = 0; i < hours.length; i++) {
+      if (currentHour == hours[i]) {
         pointIndex = i;
+      }
+
+      if (currentHour == weatherModel!.hourlyForecastModel.hours[i]) {
+        hourIndex = i;
       }
     }
   }
@@ -79,7 +92,8 @@ class WeatherController extends GetxController {
   void scrollToCurrentHour() {
     if (weatherModel != null) {
       final currentHour =
-          double.parse(weatherModel!.hourlyForecastModel.hours[pointIndex]);
+          double.parse(weatherModel!.hourlyForecastModel.hours[hourIndex]);
+
       if (currentHour > 20) {
         scrollController.jumpTo(94.8 * 20);
       } else {

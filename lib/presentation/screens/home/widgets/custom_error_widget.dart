@@ -25,8 +25,8 @@ class CustomErrorWidget extends StatelessWidget {
               child: FittedBox(
                 child: Text(
                   weatherCtrl.showConnectionError
-                      ? 'Connection Failed'
-                      : 'Location permission\nis required',
+                      ? 'connection_failed'.tr
+                      : 'location_permission_is_required'.tr,
                   style: AppStyle.primaryClrHeight1fS30,
                   textAlign: TextAlign.center,
                 ),
@@ -39,8 +39,8 @@ class CustomErrorWidget extends StatelessWidget {
               ),
               child: Text(
                 weatherCtrl.showConnectionError
-                    ? 'please check your internet connection and try again'
-                    : 'please enable location access to proceed',
+                    ? 'please_check_your_internet_connection_and_try_again'.tr
+                    : 'please_enable_location_access_to_proceed'.tr,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -59,8 +59,8 @@ class CustomErrorWidget extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 5.0),
                 child: Text(
                   weatherCtrl.showConnectionError
-                      ? 'Try Again'
-                      : 'Allow Location Access',
+                      ? 'try_again'.tr
+                      : 'allow_location_access'.tr,
                   textAlign: TextAlign.center,
                 ),
               ),

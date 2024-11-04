@@ -11,9 +11,9 @@ class WeatherServices {
     required double lat,
     required double lang,
   }) async {
-    try {
-      const String apiKey = 'YOUR_API_KEY';
+    const String apiKey = 'YOUR_API_KEY';
 
+    try {
       final response = await _dio.get(
           'https://api.weatherapi.com/v1/forecast.json?key=$apiKey&q=$lat $lang &days=3');
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/theme/app_decoration.dart';
@@ -21,10 +22,13 @@ class HourlyForecastWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Today',
+          Text(
+            'today'.tr,
             style: AppStyle.iconClrFS20,
           ),
+          Get.locale?.languageCode == 'ar'
+              ? const Gap(5)
+              : const SizedBox.shrink(),
           GetBuilder<WeatherController>(
             builder: (weatherCtrl) => ClipRRect(
               borderRadius: BorderRadius.circular(10),
@@ -43,13 +47,13 @@ class HourlyForecastWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
-                            index == weatherCtrl.pointIndex
-                                ? 'now'
+                            index == weatherCtrl.hourIndex
+                                ? 'now'.tr
                                 : int.parse(weatherCtrl.weatherModel!
                                         .hourlyForecastModel.hours[index])
                                     .toAmPm(),
                             style: AppStyle.fS16.copyWith(
-                              color: index == weatherCtrl.pointIndex
+                              color: index == weatherCtrl.hourIndex
                                   ? primaryClr
                                   : null,
                             ),
@@ -67,8 +71,9 @@ class HourlyForecastWidget extends StatelessWidget {
                             TextSpan(
                               children: [
                                 TextSpan(
-                                    text:
-                                        '${(weatherCtrl.weatherModel!.hourlyForecastModel.hourlyForecast[index] as double).toInt()}'),
+                                  text:
+                                      '${(weatherCtrl.weatherModel!.hourlyForecastModel.hourlyForecast[index] as double).toInt()}',
+                                ),
                                 const TextSpan(
                                   text: '°',
                                   style: AppStyle.degreeStyle,

@@ -53,6 +53,7 @@ extension WeatherConditionExtension on String {
       'Light showers of ice pellets' => 'Light ice pellets',
       'Moderate or heavy showers of ice pellets' => 'Heavy ice pellets',
       'Patchy light rain with thunder' => 'Rain with thunder',
+      'Patchy light rain in area with thunder' => 'Rain with thunder',
       'Moderate or heavy rain with thunder' => 'Rain with thunder',
       'Patchy light snow with thunder' => 'Snow with thunder',
       'Moderate or heavy snow with thunder' => 'Snow with thunder',

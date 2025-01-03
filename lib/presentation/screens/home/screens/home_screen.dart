@@ -20,18 +20,22 @@ class HomeScreen extends StatelessWidget {
       body: GetBuilder<WeatherController>(
         builder: (weatherCtrl) {
           if (weatherCtrl.weatherModel != null) {
-            return const Column(
-              children: [
-                Gap(50),
-                CurrentWeatherWidget(),
-                WeatherDetailsWidget(),
-                MaxGap(50),
-                WeatherGraphWidget(),
-                MaxGap(50),
-                HourlyForecastWidget(),
-                MaxGap(10),
-                DailyForecastWidget(),
-              ],
+            return RefreshIndicator(
+              onRefresh: weatherCtrl.getWeatherData,
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: const [
+                  Gap(50),
+                  CurrentWeatherWidget(),
+                  WeatherDetailsWidget(),
+                  Gap(50),
+                  WeatherGraphWidget(),
+                  Gap(50),
+                  HourlyForecastWidget(),
+                  Gap(10),
+                  DailyForecastWidget(),
+                ],
+              ),
             );
           } else if (weatherCtrl.showConnectionError ||
               weatherCtrl.showLocationError) {

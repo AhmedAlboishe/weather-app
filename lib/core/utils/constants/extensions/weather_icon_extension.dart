@@ -44,6 +44,8 @@ extension WeatherIconExtension on String {
       'Heavy freezing drizzle' => ImageConstants.sleet,
       'Patchy light rain' =>
         isDay ? ImageConstants.rainDay : ImageConstants.rainNight,
+      'Patchy light rain in area with thunder' =>
+        ImageConstants.rainThunderstorm,
       'Light rain' => ImageConstants.rain,
       'Moderate rain at times' => isDay
           ? ImageConstants.scatteredShowersDay

@@ -23,9 +23,8 @@ class HomeScreen extends StatelessWidget {
             return RefreshIndicator(
               onRefresh: weatherCtrl.getWeatherData,
               child: ListView(
-                padding: EdgeInsets.zero,
                 children: const [
-                  Gap(50),
+                  Gap(30),
                   CurrentWeatherWidget(),
                   WeatherDetailsWidget(),
                   Gap(50),
@@ -34,6 +33,7 @@ class HomeScreen extends StatelessWidget {
                   HourlyForecastWidget(),
                   Gap(10),
                   DailyForecastWidget(),
+                  Gap(10),
                 ],
               ),
             );
